@@ -68,8 +68,11 @@ print("----------------------------")
 while (option != 5):
     print("Select an option:\n1.Type and save a word\n2.Check longest and shortest saved word\n3.Check some saved word\n4.Compare length between two words\n5.Exit")
     print("----------------------------")
-    option = int(input("Response: "))
+    option = input("Response: ")
     print("----------------------------")
+
+    if (option.isdigit() or option == '-1'):
+        option = int(option)
 
     if (option == 1):
         print("Type the word to save")
@@ -82,14 +85,17 @@ while (option != 5):
         checkLongestAndShortest()
         
     elif (option == 3):
-        index = -1
+        index = -2
         stack_length = len(stack)
         
         while(index < 0 or index >= stack_length):
             print("Type the index in the stack of the word to check. The stack has", stack_length, "items. To go to main menu, type -1")
             print("----------------------------")
-            index = int(input("Response: "))
+            aux_index = input("Response: ")
             print("----------------------------")
+
+            if (aux_index.isdigit() or aux_index == '-1'):
+                index = int(aux_index)
             
             if (index < 0 or index >= stack_length):
                 if (index == -1):
@@ -103,27 +109,33 @@ while (option != 5):
                 checkSaved(index)
         
     elif (option == 4):
-        first = -1
-        second = -1
+        first = -2
+        second = -2
         stack_length = len(stack)
         
         while(first < 0 or first >= stack_length or second < 0 or second >= stack_length):
             print("Type the index in the stack of the first word. The stack has", stack_length, "items. To go to main menu, type -1")
             print("----------------------------")
-            first = int(input("Response: "))
+            aux_first = input("Response: ")
             print("----------------------------")
+
+            if (aux_first.isdigit() or aux_first == '-1'):
+                first = int(aux_first)
 
             if (first == -1):
-                    break
+                break
                 
             print("Type the index in the stack of the second word. The stack has", stack_length, "items. To go to main menu, type -1")
-            second = int(input("Response: "))
+            aux_second = input("Response: ")
             print("----------------------------")
 
+            if (aux_second.isdigit() or aux_second == '-1'):
+                second = int(aux_second)
+
             if (second == -1):
-                    break
+                break
             
-            if (first < 0 or first >= stack_length or second < 0 or second >= stack_length):
+            if (not first.isdigit() or first < 0 or first >= stack_length or not second.isdigit() or second < 0 or second >= stack_length):
                 print("Error. Invalid input. Try again")
                 print("----------------------------")
                 text = getTime() + ' Info: Comparar longitud de dos palabras - Entrada: Primera entrada: ' + str(first) + ' . Segunda entrada: ' + str(second) + 'no válida' + '\n'
