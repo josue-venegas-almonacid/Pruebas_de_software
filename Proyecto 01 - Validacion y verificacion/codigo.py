@@ -15,7 +15,7 @@ def checkLongestAndShortest():
     if (len(stack) == 0):
         print("Error. The stack has no items")
         print("----------------------------")
-        text = getTime() + ' Info: Obtener palabra más larga y más corta - Opción no válida, pila vacía' + '\n'
+        text = getTime() + ' Info: Obtener palabra más larga y más corta - Opción  no válida, pila vacía' + '\n'
         file.write(text)
         return
     
@@ -46,8 +46,8 @@ def checkSaved(index):
     return
 
 def compareLength(first, second):
-    length_first = len(stack[first])
-    length_second = len(stack[second])
+    length_first = str(len(stack[first]))
+    length_second = str(len(stack[second]))
     print("Task done successfully. The length of the first word is", length_first, "and the length of the second word is", length_second)
     text = getTime() + ' Info: Comparar longitud de dos palabras - Valor obtenido: Primera palabra: ' + length_first + '. Segunda palabra: ' + length_second + '\n'
     file.write(text)
@@ -102,7 +102,7 @@ while (option != 5):
                     break
                 print("Error. Invalid input. Try again")
                 print("----------------------------")
-                text = getTime() + ' Info: Obtener palabra de la pila - Entrada:' + str(index) + 'no válida' + '\n'
+                text = getTime() + ' Info: Obtener palabra de la pila - Entrada:' + str(index) + ' no válida' + '\n'
                 file.write(text)
 
             else:
@@ -135,10 +135,10 @@ while (option != 5):
             if (second == -1):
                 break
             
-            if (not first.isdigit() or first < 0 or first >= stack_length or not second.isdigit() or second < 0 or second >= stack_length):
+            if (first < 0 or first >= stack_length or second < 0 or second >= stack_length):
                 print("Error. Invalid input. Try again")
                 print("----------------------------")
-                text = getTime() + ' Info: Comparar longitud de dos palabras - Entrada: Primera entrada: ' + str(first) + ' . Segunda entrada: ' + str(second) + 'no válida' + '\n'
+                text = getTime() + ' Info: Comparar longitud de dos palabras - Entrada: Primera entrada: ' + str(first) + ' . Segunda entrada: ' + str(second) + ' no válida' + '\n'
                 file.write(text)
 
             else:
