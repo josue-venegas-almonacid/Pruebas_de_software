@@ -9,6 +9,8 @@
 3. Ir a la pestaña File, opción Open y seleccionar codigo.py
 4. Ir a la pestaña Run, opción Run module
 
+**Cómo usar**: Navegue entre las distintas opciones, ingresando el número correspondiente
+
 **Cómo contribuir**:
 - Enviar sus sugerencias y comentarios al correo electrónico josue.venegas@sansano.usm.cl
 
