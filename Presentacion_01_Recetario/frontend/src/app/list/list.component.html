@@ -1,12 +1,12 @@
 <div class="container mt-4">
   <div class="row">
     <div *ngFor="let recipe of recipes" class="col">
-      <div class="card" style="width: auto;">
-        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+      <div class="card m-3" style="width: 22rem;">
+        <img class="card-img-top" src={{recipe.image}} alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{recipe.name}}</h5>
-          <p class="card-text">{{recipe.ingredients}}</p>
-          <p class="card-text">{{recipe.instructions}}</p>
+          <pre class="card-text">{{recipe.ingredients}}</pre>
+          <pre class="card-text">{{recipe.instructions}}</pre>
           <div>
             <button type="button" class="btn mr-3 btn-outline-warning" (click)="updateRecipe(recipe)">Actualizar</button>
             <button type="button" class="btn btn-outline-danger" (click)="deleteRecipe(recipe)">Eliminar</button>

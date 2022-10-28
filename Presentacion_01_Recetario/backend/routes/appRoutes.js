@@ -6,9 +6,10 @@ router.post("/create", (req, res, next) => {
 console.log(req.body);
 
   var newRecipe = new Recipe({
-    name: req.body.name,
-    ingredients: req.body.ingredients,
+    name:         req.body.name,
+    ingredients:  req.body.ingredients,
     instructions: req.body.instructions,
+    image:        req.body.image
   });
 
   newRecipe.save((error, recipe) => {
@@ -29,9 +30,10 @@ router.put("/update", (req, res, next) => {
   Recipe.findById(req.body._id, (error, recipe) => {
     if (error) res.status(500).json({errmsg: error});
     else{
-      recipe.name = req.body.name;
-      recipe.ingredients = req.body.ingredients;
-      recipe.instructions = req.body.instructions;
+      recipe.name =           req.body.name;
+      recipe.ingredients =    req.body.ingredients;
+      recipe.instructions =   req.body.instructions;
+      recipe.image =          req.body.image;
       recipe.save((error, recipe) => {
         if (error) res.status(500).json({errmsg: error});
         else res.status(200).json({msg: recipe});
