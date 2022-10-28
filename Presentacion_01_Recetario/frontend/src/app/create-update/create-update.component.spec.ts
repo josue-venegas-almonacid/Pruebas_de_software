@@ -31,7 +31,6 @@ describe('CreateUpdateComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  /*----------------------------------------------------------*/
   it('should mark name field as invalid when it has no value', () => {
     const ctrl: any = component.recipeForm.get('name');
 

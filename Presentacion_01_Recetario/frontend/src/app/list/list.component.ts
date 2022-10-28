@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../shared/recipe.service';
 import { RecipeResponse, Recipe } from '../recipe';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-list',
@@ -32,12 +33,39 @@ export class ListComponent implements OnInit {
   }
 
   deleteRecipe(recipe:Recipe){
-    this.recipeService.deleteRecipe(recipe._id).subscribe((data:RecipeResponse) =>{
-      this.recipes?.splice(this.recipes.indexOf(recipe), 1);
-    },
-    (error:RecipeResponse) => {
-      console.log(error.errmsg);
-    })
+    Swal.fire({
+      title: 'Confirmación',
+      text: '¿Está seguro que desea eliminar esta receta?',
+      icon: 'question',
+      confirmButtonColor: '#0275d8',
+      confirmButtonText: 'Eliminar',
+      showCancelButton: true,
+      cancelButtonText: 'Conservar',
+    }).then((result: any) => {
+      if (result.isConfirmed){
+        this.recipeService.deleteRecipe(recipe._id).subscribe((data:RecipeResponse) =>{
+          this.recipes?.splice(this.recipes.indexOf(recipe), 1);
+          Swal.fire({
+            title: 'Proceso exitoso',
+            text: 'Se ha eliminado la receta',
+            icon: 'success',
+            confirmButtonColor: '#0275d8',
+            didClose: () => {
+              this.router.navigate(["/"]);
+            }
+          });
+        },
+        (error:RecipeResponse) => {
+          Swal.fire({
+            title: 'Error',
+            text: 'Intente nuevamente en unos minutos',
+            icon: 'error',
+            confirmButtonColor: '#0275d8'
+          });
+          console.log(error.errmsg);
+        });
+      }
+    });
   }
 
 }

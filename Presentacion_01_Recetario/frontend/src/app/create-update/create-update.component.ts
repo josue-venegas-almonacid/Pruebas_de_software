@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { RecipeService } from '../shared/recipe.service';
 import { Recipe, RecipeResponse } from '../recipe';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-update',
@@ -29,24 +30,55 @@ export class CreateUpdateComponent implements OnInit {
 
   createUpdate(){
     if(this.recipeForm.invalid){
-      console.log("ERROR");
+      Swal.fire({
+        title: 'Error',
+        text: 'Rellene todos los campos',
+        icon: 'error',
+        confirmButtonColor: '#0275d8'
+      });
       return;
     }
     if(!this.recipe._id){
       this.recipeService.createRecipe(this.recipeForm.value).subscribe((data:RecipeResponse) => {
-        console.log(data);
-        this.router.navigate(["/"]);
+        Swal.fire({
+          title: 'Proceso exitoso',
+          text: 'Se ha ingresado la receta',
+          icon: 'success',
+          confirmButtonColor: '#0275d8',
+          didClose: () => {
+            this.router.navigate(["/"]);
+          }
+        });
       },
       (error:RecipeResponse) => {
+        Swal.fire({
+          title: 'Error',
+          text: 'Intente nuevamente en unos minutos',
+          icon: 'error',
+          confirmButtonColor: '#0275d8'
+        });
         console.log(error.errmsg);
       });
     }
     else{
       this.recipeService.updateRecipe(this.recipeForm.value).subscribe((data:RecipeResponse) => {
-        console.log(data);
-        this.router.navigate(["/"]);
+        Swal.fire({
+          title: 'Proceso exitoso',
+          text: 'Se ha actualizado la receta',
+          icon: 'success',
+          confirmButtonColor: '#0275d8',
+          didClose: () => {
+            this.router.navigate(["/"]);
+          }
+        });
       },
       (error:RecipeResponse) => {
+        Swal.fire({
+          title: 'Error',
+          text: 'Intente nuevamente en unos minutos',
+          icon: 'error',
+          confirmButtonColor: '#0275d8'
+        });
         console.log(error.errmsg);
       });
     }
