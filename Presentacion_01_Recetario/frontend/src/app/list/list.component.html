@@ -1,14 +1,16 @@
-<div class="content">
-  <div *ngFor="let recipe of recipes">
-    <div class="card" style="width: 18rem;">
-      <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-      <div class="card-body">
-        <h5 class="card-title">{{recipe.name}}</h5>
-        <p class="card-text">{{recipe.ingredients}}</p>
-        <p class="card-text">{{recipe.instructions}}</p>
-        <div>
-          <a class="btn btn-warning" (click)="updateRecipe(recipe)">Actualizar</a>
-          <a class="btn btn-danger" (click)="deleteRecipe(recipe)">Eliminar</a>
+<div class="container mt-4">
+  <div class="row">
+    <div *ngFor="let recipe of recipes" class="col">
+      <div class="card" style="width: auto;">
+        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+        <div class="card-body">
+          <h5 class="card-title">{{recipe.name}}</h5>
+          <p class="card-text">{{recipe.ingredients}}</p>
+          <p class="card-text">{{recipe.instructions}}</p>
+          <div>
+            <button type="button" class="btn mr-3 btn-outline-warning" (click)="updateRecipe(recipe)">Actualizar</button>
+            <button type="button" class="btn btn-outline-danger" (click)="deleteRecipe(recipe)">Eliminar</button>
+          </div>
         </div>
       </div>
     </div>
