@@ -6,7 +6,9 @@
         <div class="card-body">
           <small class="card-text">ID: {{recipe._id}}</small>
           <h5 class="card-title">{{recipe.name}}</h5>
+          <p><b>Ingredientes</b></p>
           <pre class="card-text">{{recipe.ingredients}}</pre>
+          <p><b>Pasos</b></p>
           <pre class="card-text">{{recipe.instructions}}</pre>
           <div>
             <button type="button" class="btn mr-3 btn-outline-warning" (click)="updateRecipe(recipe)">Actualizar</button>
