@@ -11,13 +11,15 @@ import { RecipeService } from './shared/recipe.service';
 
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { GetComponent } from './get/get.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateUpdateComponent,
     ListComponent,
-    NavbarComponent
+    NavbarComponent,
+    GetComponent
   ],
   imports: [
     BrowserModule,

@@ -27,6 +27,11 @@ export class ListComponent implements OnInit {
     })
   }
 
+  checkRecipe(recipe:Recipe){
+    this.recipeService.setter(recipe);
+    this.router.navigate(["/check"]);
+  }
+
   updateRecipe(recipe:Recipe){
     this.recipeService.setter(recipe);
     this.router.navigate(["/createUpdate"]);

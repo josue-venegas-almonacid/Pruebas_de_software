@@ -1,0 +1,17 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <div class="card" style="width: 25rem;">
+        <img class="card-img-top" src={{recipe?.image}} alt="Card image cap">
+        <div class="card-body">
+          <small class="card-text">ID: {{recipe?._id}}</small>
+          <h5 class="card-title">{{recipe?.name}}</h5>
+          <p><b>Ingredientes</b></p>
+          <pre class="card-text">{{recipe?.ingredients}}</pre>
+          <p><b>Pasos</b></p>
+          <pre class="card-text">{{recipe?.instructions}}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

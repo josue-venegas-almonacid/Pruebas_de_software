@@ -26,6 +26,13 @@ router.get("/get", (req, res, next) => {
   });
 });
 
+router.get("/get/:id", (req, res, next) => {
+  Recipe.findById(req.body._id, (error, recipe) => {
+    if (error) res.status(500).json({errmsg: error});
+    else res.status(200).json({msg: recipe});
+  });
+});
+
 router.put("/update", (req, res, next) => {
   Recipe.findById(req.body._id, (error, recipe) => {
     if (error) res.status(500).json({errmsg: error});
