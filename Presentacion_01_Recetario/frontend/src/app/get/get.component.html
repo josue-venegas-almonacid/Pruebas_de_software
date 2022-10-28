@@ -1,9 +1,11 @@
 <div class="container mt-4">
-  <div class="row">
-    <div class="col">
-      <div class="card" style="width: 25rem;">
-        <img class="card-img-top" src={{recipe?.image}} alt="Card image cap">
-        <div class="card-body">
+  <div class="card">
+    <div class="row no-gutters">
+      <div class="col-auto mr-2">
+          <img src={{recipe?.image}} class="img-fluid" alt="" width="250px" height="250px">
+      </div>
+      <div class="col">
+        <div class="card-block px-2">
           <small class="card-text">ID: {{recipe?._id}}</small>
           <h5 class="card-title">{{recipe?.name}}</h5>
           <p><b>Ingredientes</b></p>
