@@ -2,7 +2,7 @@
   <div class="row">
     <div *ngFor="let recipe of recipes" class="col-md-4 mt-2 mb-2" id={{recipe._id}}>
       <div class="card" style="width: auto;">
-        <img class="card-img-top" src={{recipe.image}} alt="Card image cap">
+        <img class="card-img-top" src={{recipe.image}} alt="Card image cap" height="200px">
         <div class="card-body">
           <small class="card-text">ID: {{recipe._id}}</small>
           <h5 class="card-title">{{recipe.name}}</h5>
