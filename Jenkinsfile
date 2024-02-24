@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Copiar los archivos compilados al directorio de despliegue
-                bat "xcopy /s/y T1_T2_Recetario_CI_CD/frontend/dist C:\\xampp\\htdocs\\recetario"
+                bat "xcopy T1_T2_Recetario_CI_CD/frontend/dist C:/xampp/htdocs /s/y"
             }
         }
     }
