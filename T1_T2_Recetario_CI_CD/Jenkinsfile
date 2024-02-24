@@ -2,6 +2,21 @@ pipeline {
     agent any
     
     stages {
+        stage('Test') {
+            steps {
+                // Ejecutar pruebas de JUnit
+                script {
+                    try {
+                        // Ejecutar las pruebas JUnit definidas en el proyecto Maven
+                        sh 'mvn test'
+                    } catch (err) {
+                        // Si las pruebas fallan, marcar el paso como fallido
+                        currentBuild.result = 'FAILED'
+                        error "Las pruebas JUnit fallaron"
+                    }
+                }
+            }
+        }
         stage('Build') {
             steps {
                 script {
