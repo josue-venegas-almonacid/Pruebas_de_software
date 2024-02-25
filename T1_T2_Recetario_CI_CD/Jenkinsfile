@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     // Ejecutar pruebas de selenium
-                    bat "cd T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest && npm run start && sleep 60 && mvn clean test"
+                    bat "cd T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest && npm start && sleep 60 && mvn clean test"
                 }
             }
         }
