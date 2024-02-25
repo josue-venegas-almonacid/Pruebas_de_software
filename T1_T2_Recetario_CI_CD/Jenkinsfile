@@ -7,8 +7,8 @@ pipeline {
                 // Ejecutar las pruebas de Selenium
                 dir('T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest') {
                     script {
-                        def ruta_ejecutable = 'T1_T2_Recetario_CI_CD/selenium_project/apache-maven-3.6.3/bin/'
-                        sh "${ruta_ejecutable}mvn -v"
+                        def ruta_ejecutable = 'T1_T2_Recetario_CI_CD/selenium_project/apache-maven-3.9.6/bin/'
+                        sh "${ruta_ejecutable}mvn clean test"
                     }
                 }
             }
