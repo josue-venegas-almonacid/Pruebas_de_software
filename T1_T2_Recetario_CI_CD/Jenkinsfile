@@ -5,7 +5,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    bat "cd T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest && T1_T2_Recetario_CI_CD/selenium_project/apache-maven-3.9.6/bin/mvn clean test"
+                    bat "cd T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest && ./T1_T2_Recetario_CI_CD/selenium_project/apache-maven-3.9.6/bin/mvn clean test"
                 }
             }
         }
