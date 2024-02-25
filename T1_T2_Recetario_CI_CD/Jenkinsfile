@@ -2,19 +2,25 @@ pipeline {
     agent any
     
     stages {
+        stage('Update') {
+            steps {
+                script {
+                    // Instalar dependencias del frontend
+                    bat "cd T1_T2_Recetario_CI_CD/frontend && npm install"
+                }
+            }
+        }
         stage('Test') {
             steps {
                 script {
                     // Ejecutar pruebas de selenium
-                    bat "cd T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest && mvn clean test"
+                    bat "cd T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest && npm run start && sleep 60 && mvn clean test"
                 }
             }
         }
         stage('Build') {
             steps {
                 script {
-                    // Instalar dependencias del frontend
-                    bat "cd T1_T2_Recetario_CI_CD/frontend && npm install"
                     // Compilar el frontend
                     bat "cd T1_T2_Recetario_CI_CD/frontend && npm run build"
                 }
