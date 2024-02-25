@@ -1,16 +1,15 @@
 pipeline {
     agent any
-
-    environment {
-        mvn_path = "T1_T2_Recetario_CI_CD/selenium_project/apache-maven-3.9.6/bin/mvn"
-    }
     
     stages {
         stage('Test') {
             steps {
                 script {
                     // Ejecutar las pruebas de Selenium
-                    bat "cd T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest && ${mvn_path} clean test"
+                    def mvn_path = "T1_T2_Recetario_CI_CD/selenium_project/apache-maven-3.9.6/bin/mvn"
+                    dir("T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest") {
+                        bat "${mvn_path} clean test"
+                    }
                 }
             }
         }
