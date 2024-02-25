@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                // Copiar los archivos compilados al directorio de despliegue
+                // Copiar los archivos compilados al ambiente de producción
                 bat 'xcopy "T1_T2_Recetario_CI_CD/frontend/dist" "C:/xampp/htdocs" /s/y'
             }
         }
