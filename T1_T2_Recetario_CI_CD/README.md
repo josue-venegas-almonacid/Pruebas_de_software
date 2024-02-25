@@ -39,9 +39,10 @@ Se ha comprobado el correcto funcionamiento del proyecto con las siguientes vers
 # Instalación y uso
 ## Desarrollo aplicación
 1. Base de datos
+
 1.1. Cree una base de datos en MongoDB
 
-1.2. Obtenga el connection string y reemplácelo por el que está en el archivo `index.js` ubicado en la carpeta 'backend'
+1.2. Obtenga el Connection String y reemplácelo por el que está en el archivo `index.js` ubicado en la carpeta 'backend'
 
 2. Backend
    
