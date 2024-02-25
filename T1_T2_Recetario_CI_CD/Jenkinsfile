@@ -5,12 +5,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Ejecutar las pruebas de Selenium
-                dir('T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest') {
-                    script {
-                        def ruta_ejecutable = 'T1_T2_Recetario_CI_CD/selenium_project/apache-maven-3.9.6/bin/mvn'
-                        sh "${ruta_ejecutable} -v"
-                    }
-                }
+                bat "cd T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest && mvn clean test"
             }
         }
         stage('Build') {
