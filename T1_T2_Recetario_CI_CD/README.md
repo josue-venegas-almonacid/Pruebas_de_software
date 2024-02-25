@@ -77,6 +77,8 @@ Se ha comprobado el correcto funcionamiento del proyecto con las siguientes vers
 4. Inicie PM2 con el comando `pm2 start index.js`
 5. Empiece a monitorear el backend con `pm2 monit`. Se abrirá una ventana en su navegador para crear un Bucket de monitoreo
 6. Si accede al frontend desde el entorno de desarrollo `localhost:4200` o desde los binarios alojados en Apache HTTP Server `localhost:80` podrá ver que la aplicación se está conectando correctamente al backend. Esto es porque PM2 está ejecutando el backend en segundo plano. Puede acceder al recurso en `localhost:8081`
+7. Cada vez que haga un push a su repositorio en GitHub, podrá notar una alerta en la interfaz de monitoreo indicando la última versión. Como el backend monitoreado es el mismo que el backend del repositorio en GitHub, sólo deberá reiniciar la aplicación presionando en 'Restart apps'
+8. Si desea ver los logs generados por el backend, puede hacerlo mediante el botón 'Show logs'
 
 ## Disponibilizar frontend y backend en todo momento
 1. Active la opción para iniciar XAMPP y APACHE HTTP Server automáticamente al iniciar el sistema operativo
