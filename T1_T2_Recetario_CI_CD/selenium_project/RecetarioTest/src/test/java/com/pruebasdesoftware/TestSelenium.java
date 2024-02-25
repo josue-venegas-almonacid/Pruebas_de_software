@@ -29,7 +29,7 @@ public class TestSelenium {
 		// driver.get("http://localhost:4200/");
 		
 		// Si se ejecuta el frontend en el directorio de despliegue (binarios hosteados por Apache en XAMPP)
-		driver.get("http://127.0.0.2:80/");
+		driver.get("http://localhost:80/");
 	}
 	
 	@Test
