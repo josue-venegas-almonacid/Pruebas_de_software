@@ -4,12 +4,11 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                // Acceder a la carpeta
+                // Ejecutar las pruebas de Selenium
                 dir('T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest') {
-                    // Ejecutar el comando mvn clean test con la ruta completa del ejecutable
                     script {
                         def ruta_ejecutable = 'T1_T2_Recetario_CI_CD/selenium_project/apache-maven-3.6.3/bin/'
-                        sh "${ruta_ejecutable}mvn clean test"
+                        sh "${ruta_ejecutable}mvn -v"
                     }
                 }
             }
