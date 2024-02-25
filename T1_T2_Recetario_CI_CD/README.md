@@ -67,7 +67,10 @@ Se ha comprobado el correcto funcionamiento del proyecto con las siguientes vers
    
 2.1. Usar su IDE favorito de Java, abrir la carpeta 'selenium_project/RecetarioTest' como un proyecto tipo Maven y ejecutar el archivo `TestSelenium.java`, ubicado en la carpeta 'selenium_project\RecetarioTest\src\test\java\com\pruebasdesoftware' como un JUnit Test
 
-2.2. Descargar los binarios de Apache Maven, agregar la carpeta 'bin' al PATH en las variables del sistema, acceder a la carpeta 'selenium_project/RecetarioTest' y ejecutar el comando `mvn clean test` 
+2.2. Descargar los binarios de Apache Maven, agregar la carpeta 'bin' al PATH en las variables del sistema, acceder a la carpeta 'selenium_project/RecetarioTest' y ejecutar el comando `mvn clean test`
+
+Notas:
+- Asegúrese de que Apache HTTP Server `localhost:80` y el backend `localhost:8081` estén encendidos cada vez que desee ejecutar las pruebas, de lo contrario, el testing de Selenium fallará
    
 ## Entorno CI/CD con Jenkins y XAMPP, Apache HTTP Server
 1. Asegúrese de tener instalado Java Runtime Environment (JRE) o Java Development Kit (JDK) y haber agregado la carpeta raíz (por ejemplo C:\Program Files\Java\jdk-11) como JAVA_HOME en las variables del sistema, y haber agregado la carpeta raíz y la carpeta 'bin' (por ejemplo C:\Program Files\Java\jdk-11\bin) al PATH en las variables del sistema
@@ -76,7 +79,10 @@ Se ha comprobado el correcto funcionamiento del proyecto con las siguientes vers
 4. Instale los plugins de Jenkins para el testing: Maven Integration Plugin Version 3.23 y Pipeline Maven Integration Plugin Version 1376.v18876d10ce9c y luego vaya a Configuración de Herramientas de Jenkins para activar la instalación automática de Maven 3.9.6 para cada JOB
 5. Instale los plugins de Jenkins para el despliegue: NodeJS Plugin Version 1.6.1 y GitHub
 7. Cree un JOB de tipo pipeline en Jenkins, y conéctelo al repositorio en GitHub (por ejemplo https://github.com/josue-venegas-almonacid/Pruebas_de_software.git) usando un GitHub Access Token. No olvide apuntar a la rama `*/main` y al script `T1_T2_Recetario_CI_CD/Jenkinsfile`
-8. Ejecute el JOB cada vez que quiera desplegar el frontend en su servidor Apache HTTP Server
+8. Ejecute el JOB cada vez que quiera desplegar el frontend en el directorio de Apache HTTP Server
+
+Notas:
+- Asegúrese de que Apache HTTP Server `localhost:80` y el backend `localhost:8081` estén encendidos cada vez que desee ejecutar el JOB, de lo contrario, el testing de Selenium fallará
 
 ## Automatización en la ejecución del JOB con GitHub Webhooks
 1. Debido a que Jenkins está instalado de forma local, hay que exponerlo a Internet para que GitHub Webhooks pueda enviarle las notificaciones de los eventos, puede hacer esto utilizando NGRok
@@ -84,7 +90,11 @@ Se ha comprobado el correcto funcionamiento del proyecto con las siguientes vers
 3. Ejecute el comando `ngrok http 8080`. NGRok creará una URL pública apuntando a Jenkins
 4. Vaya al repositorio en GitHub y cree un Webhook apuntando a `URL_pública/github-webhook/` (por ejemplo https://dd322040.ngrok-free.app/github-webhook/), con `Content type` `application/json`
 5. Vaya a Jenkins y active la opción `GitHub hook trigger for GITScm polling` en la configuración del JOB creado en la sección anterior
-6. Cada vez que haga un push a su repositorio en GitHub, una notificación será enviada a Jenkins para ejecutar el JOB automáticamente. No olvide mantener abierta la terminal en la que ejecutó NGRok, de lo contrario, la URL pública apuntando a Jenkins expirará
+6. Cada vez que haga un push a su repositorio en GitHub, GitHub Webhooks enviará una señal a Jenkins para ejecutar el JOB
+
+Notas:
+- Asegúrese de mantener abierta la terminal en la que ejecutó NGRok, de lo contrario, la URL pública apuntando a Jenkins expirará y GitHub Webhooks no podrá comunicarse con Jenkins
+- Asegúrese de que Apache HTTP Server `localhost:80` y el backend `localhost:8081` estén encendidos cada vez realice un push al repositorio, de lo contrario, el testing de Selenium fallará
 
 ## Monitoreo de backend con PM2
 1. Acceda a la carpeta 'backend'
@@ -103,4 +113,4 @@ Se ha comprobado el correcto funcionamiento del proyecto con las siguientes vers
 
 ## Disponibilizar Jenkins en todo momento
 1. Asegúrese de que el servicio de Jenkins se ejecute automáticamente al iniciar el sistema operativo
-2. Si desea mantener la ejecución automática del JOB por medio de GitHub Webhooks, deberá crear un script que ejecute NGRok automáticamente al iniciar el sistema operativo. Asegúrese de que la URL no ha cambiado respecto a la URL guardada en el GitHub Webhook
+2. Si desea mantener la ejecución automática del JOB por medio de GitHub Webhooks, deberá crear un script que ejecute NGRok automáticamente al iniciar el sistema operativo y actualizar la URL guardada en el GitHub Webhook por la recién generada
