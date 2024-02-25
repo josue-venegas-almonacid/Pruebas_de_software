@@ -14,11 +14,11 @@ pipeline {
             steps {
                 script {
                     // Iniciar frontend en modo desarrollo en segundo plano
-                    bat "start /b cmd /c cd T1_T2_Recetario_CI_CD/frontend && npm run start"
+                    sh "cd T1_T2_Recetario_CI_CD/frontend && npm run start &"
                     // Esperar a que el servidor esté listo
                     waitUntil { 
-                        def response = sh(script: "curl -Is http://localhost:4200 | head -n 1", returnStatus: true)
-                        return response == 0
+                        def serverStatus = sh(script: 'curl -s localhost:4200', returnStatus: true)
+                        return serverStatus == 0
                     }
                     // Ejecutar pruebas de selenium
                     bat "cd T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest && mvn clean test"
