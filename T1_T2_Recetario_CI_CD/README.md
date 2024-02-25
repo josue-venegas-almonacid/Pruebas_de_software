@@ -38,21 +38,26 @@ Se ha comprobado el correcto funcionamiento del proyecto con las siguientes vers
 
 # Instalación y uso
 ## Desarrollo aplicación
-1. Backend
-   
-1.1. Acceda a la carpeta 'backend'
-   
-1.2. Instale las librerías necesarias con el comando `npm install`
+1. Base de datos
+1.1. Cree una base de datos en MongoDB
 
-1.3. Inicie el entorno de desarrollo con el comando `node index.js`. Podrá acceder al recurso en `localhost:8081`
+1.2. Obtenga el connection string y reemplácelo por el que está en el archivo `index.js` ubicado en la carpeta 'backend'
 
-2. Frontend
+2. Backend
    
-2.1. Acceda a la carpeta 'frontend'
-
+2.1. Acceda a la carpeta 'backend'
+   
 2.2. Instale las librerías necesarias con el comando `npm install`
 
-2.3. Inicie el entorno de desarrollo con el comando `npm start`. Podrá acceder al recurso en `localhost:4200`
+2.3. Inicie el entorno de desarrollo con el comando `node index.js`. Podrá acceder al recurso en `localhost:8081`
+
+3. Frontend
+   
+3.1. Acceda a la carpeta 'frontend'
+
+3.2. Instale las librerías necesarias con el comando `npm install`
+
+3.3. Inicie el entorno de desarrollo con el comando `npm start`. Podrá acceder al recurso en `localhost:4200`
 
 ## Testing unitario con Karma Jasmine
 1. Asegúrese de tener instalado Google Chrome
