@@ -13,8 +13,10 @@ pipeline {
         stage('Test') {
             steps {
                 script {
+                    // Iniciar frontend en modo desarrollo
+                    bat "cd T1_T2_Recetario_CI_CD/frontend && npm run serve && sleep 60"
                     // Ejecutar pruebas de selenium
-                    bat "cd T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest && npm start && sleep 60 && mvn clean test"
+                    bat "cd T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest && mvn clean test"
                 }
             }
         }
