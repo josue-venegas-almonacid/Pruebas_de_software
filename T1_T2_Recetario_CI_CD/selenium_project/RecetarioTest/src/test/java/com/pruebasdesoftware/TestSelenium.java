@@ -26,10 +26,10 @@ public class TestSelenium {
 		driver.manage().window().maximize();
 		
 		// Si se ejecuta el frontend en ambiente de desarrollo
-		// driver.get("http://localhost:4200/");
+		driver.get("http://localhost:4200/");
 		
 		// Si se ejecuta el frontend en ambiente de produccion (binarios hosteados por Apache en XAMPP)
-		driver.get("http://127.0.0.2:80/");
+		// driver.get("http://127.0.0.2:80/");
 	}
 	
 	@Test
