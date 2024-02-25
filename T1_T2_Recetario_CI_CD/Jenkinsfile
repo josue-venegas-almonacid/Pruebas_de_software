@@ -5,7 +5,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    bat "cd selenium_project/RecetarioTest && mvn test"
+                    bat "cd T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest && mvn test"
                 }
             }
         }
