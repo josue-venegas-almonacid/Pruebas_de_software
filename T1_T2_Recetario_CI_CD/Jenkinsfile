@@ -6,10 +6,7 @@ pipeline {
             steps {
                 script {
                     // Ejecutar las pruebas de Selenium
-                    def mvn_path = "T1_T2_Recetario_CI_CD/selenium_project/apache-maven-3.9.6/bin/mvn"
-                    dir("T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest") {
-                        bat "${mvn_path} clean test"
-                    }
+                    bat "cd T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest && ../apache-maven-3.6.3/bin/mvn clean test"
                 }
             }
         }
