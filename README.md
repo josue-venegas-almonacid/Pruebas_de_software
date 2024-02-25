@@ -11,7 +11,7 @@ Repositorio utilizado para alojar el proyecto y los ejercicios desarrollados dur
 El enfoque principal del proyecto se basó en:
 - Creación y desarrollo de un aplicación web enfocada a alojar recetas de comida, utilizando AngularJS, NodeJS y MongoDB
 - Instalación y configuración de una suite de pruebas unitarias utilizando Jasmine Karma
-- Instalación y configuración de una suite de pruebas utilizando Maven, JUnit y Selenium WebDriver
+- Instalación y configuración de una suite de pruebas de aplicación web utilizando Maven, JUnit y Selenium WebDriver
 - Instalación y configuración de un entorno CI/CD para el frontend utilizando Jenkins
 - Instalación y configuración de un entorno para el despliegue del frontend utilizando XAMPP, Apache HTTP Server
 - Instalación y configuración de un túnel inverso para exponer Jenkins utilizando NGRok
