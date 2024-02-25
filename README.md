@@ -15,7 +15,7 @@ El enfoque principal del proyecto se basó en:
 - Instalación y configuración de un entorno CI/CD para el frontend utilizando Jenkins
 - Instalación y configuración de un entorno para el despliegue del frontend utilizando XAMPP, Apache HTTP Server
 - Instalación y configuración de un túnel inverso para exponer Jenkins utilizando NGRok
-- Automatización de JOBS de Jenkins utilizando GitHub Hooks
+- Automatización de JOBS de Jenkins utilizando GitHub Webhooks
 - Instalación y configuración de un entorno de monitoreo del backend utilizando PM2
 
 # T3
