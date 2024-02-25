@@ -17,19 +17,26 @@ El enfoque principal del proyecto se basó en:
 # Herramientas necesarias
 
 Se ha comprobado el correcto funcionamiento del proyecto con las siguientes versiones:
+
+## Desarrollo web (AngularJS, NodeJS)
 - Git 2.42.0
 - Python 2.7.18
 - NodeJS 20.11.1
 - NPM 10.2.4
+- Visual Studio Code 1.86.2
 
-- Java Development Kit (JDK) 11.0.21
+## Testing (Karma Jasmine, Maven/JUnit/Selenium Web Driver)
 - Google Chrome 122.0.6261.70
+- Java Runtime Environment (JRE) 8.0.4010.10
+- Eclipse IDE for Java Developers 2023-12 4.30.0
 
+## CI/CD
+- Java Development Kit (JDK) 11.0.21
 - Jenkins 2.440.1
 - NGRok 3.6.0
 - XAMPP 8.0.30
 
-# Entorno de desarrollo
+# Instalación y uso
 ## Desarrollo aplicación
 1. Backend
    1.1. Acceda a la carpeta 'backend'
@@ -50,7 +57,7 @@ Se ha comprobado el correcto funcionamiento del proyecto con las siguientes vers
 ## Testing de aplicación web con Maven, JUnit y Selenium WebDriver
 1. Asegúrese de tener instalado Java Runtime Environment (JRE) o Java Development Kit (JDK) y haber agregado la carpeta raíz (por ejemplo C:\Program Files\Java\jdk-11) como JAVA_HOME en las variables del sistema, y haber agregado la carpeta raíz y la carpeta 'bin' (por ejemplo C:\Program Files\Java\jdk-11\bin) al PATH en las variables del sistema
 2. Para ejecutar las pruebas puede:
-2.1. Usar su IDE favorito de Java (recomendado: Eclipse IDE for Java Developers), abriendo la carpeta 'selenium_project/RecetarioTest' como un proyecto tipo Maven y ejecutar el archivo `TestSelenium.java`, ubicado en la carpeta 'selenium_project\RecetarioTest\src\test\java\com\pruebasdesoftware' como un JUnit Test
+2.1. Usar su IDE favorito de Java, abrir la carpeta 'selenium_project/RecetarioTest' como un proyecto tipo Maven y ejecutar el archivo `TestSelenium.java`, ubicado en la carpeta 'selenium_project\RecetarioTest\src\test\java\com\pruebasdesoftware' como un JUnit Test
 2.2. Descargar los binarios de Apache Maven, agregar la carpeta 'bin' al PATH en las variables del sistema, acceder a la carpeta 'selenium_project/RecetarioTest' y ejecutar el comando `mvn clean test` 
    
 ## Entorno CI/CD con Jenkins y XAMPP, Apache HTTP Server
