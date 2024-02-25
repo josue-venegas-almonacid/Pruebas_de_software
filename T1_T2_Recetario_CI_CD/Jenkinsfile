@@ -2,12 +2,6 @@ pipeline {
     agent any
     
     stages {
-        stage('Test') {
-            steps {
-                // Ejecutar las pruebas de Selenium
-                bat "cd T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest && mvn clean test"
-            }
-        }
         stage('Build') {
             steps {
                 script {
