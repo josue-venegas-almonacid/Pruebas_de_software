@@ -39,13 +39,20 @@ Se ha comprobado el correcto funcionamiento del proyecto con las siguientes vers
 # Instalación y uso
 ## Desarrollo aplicación
 1. Backend
-   1.1. Acceda a la carpeta 'backend'
-   1.2. Instale las librerías necesarias con el comando `npm install`
-   1.3. Inicie el entorno de desarrollo con el comando `node index.js`. Podrá acceder al recurso en `localhost:8081`
-3. Frontend
-   1.1. Acceda a la carpeta 'frontend'
-   1.2. Instale las librerías necesarias con el comando `npm install`
-   1.3. Inicie el entorno de desarrollo con el comando `npm start`. Podrá acceder al recurso en `localhost:4200`
+   
+1.1. Acceda a la carpeta 'backend'
+   
+1.2. Instale las librerías necesarias con el comando `npm install`
+
+1.3. Inicie el entorno de desarrollo con el comando `node index.js`. Podrá acceder al recurso en `localhost:8081`
+
+2. Frontend
+   
+2.1. Acceda a la carpeta 'frontend'
+
+2.2. Instale las librerías necesarias con el comando `npm install`
+
+2.3. Inicie el entorno de desarrollo con el comando `npm start`. Podrá acceder al recurso en `localhost:4200`
 
 ## Testing unitario con Karma Jasmine
 1. Asegúrese de tener instalado Google Chrome
@@ -57,7 +64,9 @@ Se ha comprobado el correcto funcionamiento del proyecto con las siguientes vers
 ## Testing de aplicación web con Maven, JUnit y Selenium WebDriver
 1. Asegúrese de tener instalado Java Runtime Environment (JRE) o Java Development Kit (JDK) y haber agregado la carpeta raíz (por ejemplo C:\Program Files\Java\jdk-11) como JAVA_HOME en las variables del sistema, y haber agregado la carpeta raíz y la carpeta 'bin' (por ejemplo C:\Program Files\Java\jdk-11\bin) al PATH en las variables del sistema
 2. Para ejecutar las pruebas puede:
+   
 2.1. Usar su IDE favorito de Java, abrir la carpeta 'selenium_project/RecetarioTest' como un proyecto tipo Maven y ejecutar el archivo `TestSelenium.java`, ubicado en la carpeta 'selenium_project\RecetarioTest\src\test\java\com\pruebasdesoftware' como un JUnit Test
+
 2.2. Descargar los binarios de Apache Maven, agregar la carpeta 'bin' al PATH en las variables del sistema, acceder a la carpeta 'selenium_project/RecetarioTest' y ejecutar el comando `mvn clean test` 
    
 ## Entorno CI/CD con Jenkins y XAMPP, Apache HTTP Server
