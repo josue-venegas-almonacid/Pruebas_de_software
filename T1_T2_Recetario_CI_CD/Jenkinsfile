@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     // Iniciar frontend en modo desarrollo en segundo plano
-                    bat "cd T1_T2_Recetario_CI_CD/frontend && npm run start &"
+                    bat "start /b cmd /c cd T1_T2_Recetario_CI_CD/frontend && npm run start"
                     // Esperar a que el servidor esté listo
                     waitUntil { 
                         def response = sh(script: "curl -Is http://localhost:4200 | head -n 1", returnStatus: true)
