@@ -5,6 +5,9 @@ pipeline {
         stage('Test') {
             steps {
                 script {
+                    // Ejecutar frontend en segundo plano
+                    bat "cd T1_T2_Recetario_CI_CD/frontend && npm run start &"
+
                     // Ejecutar pruebas de selenium
                     bat "cd T1_T2_Recetario_CI_CD/selenium_project/RecetarioTest && mvn clean test"
                 }
