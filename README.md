@@ -6,6 +6,11 @@ Pruebas de Software
 
 Repositorio utilizado para alojar el proyecto y los ejercicios desarrollados durante el curso "Pruebas de Software" el segundo semestre del año 2022 en la Universidad Técnica Federico Santa María, para la carrera de Ingeniería Civil en Informática
 
+# Creadores
+- Jean Franco Zárate 201773524-4
+- Josué Venegas 201873534-5
+
+
 # T1 y T2
 
 El enfoque principal del proyecto se basó en:
